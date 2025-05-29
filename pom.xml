@@ -14,6 +14,10 @@
         <module>auth-service</module>
         <module>user-profile-service</module>
         <module>mood-tracker-service</module>
+        <module>history-service</module>
+        <module>notifications-service</module>
+        <module>report-service</module>
+        <module>personalization-service</module>
     </modules>
 
     <properties>

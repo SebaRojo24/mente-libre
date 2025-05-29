@@ -23,6 +23,31 @@ spring:
           predicates:
             - Path=/api/moods/**
 
+        - id: history-service
+          uri: lb://history-service
+          predicates:
+            - Path=/api/history/**
+            -
+        - id: notifications-service
+          uri: lb://notifications-service
+          predicates:
+            - Path=/api/notifications/**
+
+        - id: therapy-chatbot-service
+          uri: lb://therapy-chatbot-service
+          predicates:
+            - Path=/api/chatbot/**
+
+        - id: report-service
+          uri: lb://report-service
+          predicates:
+            - Path=/api/reports/**
+
+        - id: personalization-service
+          uri: lb://personalization-service
+          predicates:
+            - Path=/api/personalization/**
+
 
       discovery:
         locator:

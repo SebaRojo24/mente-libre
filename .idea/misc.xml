@@ -8,6 +8,11 @@
         <option value="$PROJECT_DIR$/discovery-service/pom.xml" />
         <option value="$PROJECT_DIR$/user-profile-service/pom.xml" />
         <option value="$PROJECT_DIR$/mood-tracker-service/pom.xml" />
+        <option value="$PROJECT_DIR$/history-service/pom.xml" />
+        <option value="$PROJECT_DIR$/notifications-service/pom.xml" />
+        <option value="$PROJECT_DIR$/therapy-chatbot-service/pom.xml" />
+        <option value="$PROJECT_DIR$/report-service/pom.xml" />
+        <option value="$PROJECT_DIR$/personalization-service/pom.xml" />
       </list>
     </option>
   </component>
