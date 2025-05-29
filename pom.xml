@@ -12,6 +12,8 @@
         <module>discovery-service</module>
         <module>gateway-service</module>
         <module>auth-service</module>
+        <module>user-profile-service</module>
+        <module>mood-tracker-service</module>
     </modules>
 
     <properties>
