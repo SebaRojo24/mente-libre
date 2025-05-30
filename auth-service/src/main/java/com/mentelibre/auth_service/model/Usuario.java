@@ -1,6 +1,9 @@
 package com.mentelibre.auth_service.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,8 +20,12 @@ public class Usuario {
     private Long id;
 
     @Column(nullable = false, unique = true)
+    @Email
+    @NotBlank
     private String email;
 
     @Column(nullable = false)
+    @NotBlank
+    @Size(min = 6)
     private String password;
 }

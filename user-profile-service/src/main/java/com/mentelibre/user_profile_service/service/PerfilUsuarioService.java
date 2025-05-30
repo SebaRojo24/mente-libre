@@ -25,4 +25,8 @@ public class PerfilUsuarioService {
     public List<PerfilUsuario> obtenerTodos() {
         return repository.findAll();
     }
+
+    public void eliminarPerfil(Long id) {
+        repository.deleteById(id);
+    }
 }

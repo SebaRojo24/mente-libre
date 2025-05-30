@@ -8,6 +8,13 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.Optional;
 
+import com.mentelibre.mood_tracker_service.model.EstadoAnimo;
+import com.mentelibre.mood_tracker_service.repository.EstadoAnimoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
 @Service
 public class EstadoAnimoService {
 
@@ -17,7 +24,7 @@ public class EstadoAnimoService {
     public EstadoAnimo registrarEstado(Long usuarioId, String estado) {
         LocalDate hoy = LocalDate.now();
 
-        Optional<EstadoAnimo> existente = repository.findByUsuarioIdandFecha(usuarioId, hoy);
+        Optional<EstadoAnimo> existente = repository.findByUsuarioIdAndFecha(usuarioId, hoy);
         if (existente.isPresent()) {
             throw new RuntimeException("Ya existe un estado registrado para hoy");
         }
@@ -31,6 +38,9 @@ public class EstadoAnimoService {
     }
 
     public Optional<EstadoAnimo> obtenerEstadoHoy(Long usuarioId) {
-        return repository.findByUsuarioIdandFecha(usuarioId, LocalDate.now());
+        return repository.findByUsuarioIdAndFecha(usuarioId, LocalDate.now());
+    }
+    public List<EstadoAnimo> obtenerTodosPorUsuario(Long usuarioId) {
+        return repository.findByUsuarioId(usuarioId);
     }
 }
