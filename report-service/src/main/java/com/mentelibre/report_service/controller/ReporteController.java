@@ -15,19 +15,19 @@ public class ReporteController {
     @Autowired
     private ReporteService service;
 
-    @PostMapping("/user/(id)")
+    @PostMapping("/user/{id}")
     public Reporte crear(@PathVariable Long id, @RequestBody Map<String, String> body) {
         String descripcion = body.get("descripcion");
         return service.generarReporte(id, descripcion);
     }
 
-    @GetMapping("/user/(id)")
+    @GetMapping("/user/{id}")
     public List<Reporte> obtener(@PathVariable Long id) {
         return service.obtenerPorUsuario(id);
     }
 
     @GetMapping("/download")
     public String descargar() {
-        return "Simulando descarga de reportes (PDF/JISON).";
+        return "Simulando descarga de reportes (PDF/JSON).";
     }
 }
