@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/moods")
@@ -25,5 +26,9 @@ public class EstadoAnimoController {
     public EstadoAnimo obtenerEstadoHoy(@RequestParam Long usuarioId) {
         return service.obtenerEstadoHoy(usuarioId)
                 .orElseThrow(() -> new RuntimeException("No se encontró estado para hoy"));
+    }
+    @GetMapping("/usuario/{usuarioId}")
+    public List<EstadoAnimo> obtenerTodosPorUsuario(@PathVariable Long usuarioId) {
+        return service.obtenerTodosPorUsuario(usuarioId);
     }
 }

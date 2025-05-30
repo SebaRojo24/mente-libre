@@ -29,4 +29,25 @@ public class PerfilUsuarioController {
         return service.obtenerPerfilPorId(id)
                 .orElseThrow(() -> new RuntimeException("Perfil no encontrado"));
     }
+
+    @PutMapping("/{id}")
+    public PerfilUsuario actualizarPerfil(@PathVariable Long id, @RequestBody PerfilUsuario perfilActualizado) {
+        PerfilUsuario perfilExistente = service.obtenerPerfilPorId(id)
+                .orElseThrow(() -> new RuntimeException("Perfil no encontrado"));
+
+        perfilExistente.setNombre(perfilActualizado.getNombre());
+        perfilExistente.setApellido(perfilActualizado.getApellido());
+        perfilExistente.setEdad(perfilActualizado.getEdad());
+        perfilExistente.setPais(perfilActualizado.getPais());
+        perfilExistente.setPreferencias(perfilActualizado.getPreferencias());
+
+        return service.crearPerfil(perfilExistente);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminarPerfil(@PathVariable Long id) {
+        service.obtenerPerfilPorId(id)
+                .orElseThrow(() -> new RuntimeException("Perfil no encontrado"));
+        service.eliminarPerfil(id);
+    }
 }
