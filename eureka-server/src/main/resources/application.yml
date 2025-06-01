@@ -1,0 +1,14 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  client:
+    register-with-eureka: false   # El servidor Eureka no se registra a sí mismo
+    fetch-registry: false          # No busca otros servidores Eureka
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
