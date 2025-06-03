@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/moods")
+@RequestMapping("/moods")
 public class EstadoAnimoController {
 
     @Autowired

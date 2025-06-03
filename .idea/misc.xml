@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/therapy-chatbot-service/pom.xml" />
         <option value="$PROJECT_DIR$/report-service/pom.xml" />
         <option value="$PROJECT_DIR$/personalization-service/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
       </list>
     </option>
   </component>

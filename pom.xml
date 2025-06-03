@@ -18,6 +18,7 @@
         <module>notifications-service</module>
         <module>report-service</module>
         <module>personalization-service</module>
+        <module>eureka-server</module>
     </modules>
 
     <properties>
