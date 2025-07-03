@@ -34,5 +34,3 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("✅ Datos de prueba insertados correctamente");
     }
 }
-
-}

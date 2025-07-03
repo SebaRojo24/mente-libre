@@ -9,6 +9,9 @@ import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 
 import java.util.List;
 
@@ -58,5 +61,27 @@ public class EstadoAnimoController {
     @DeleteMapping("/{id}")
     public void eliminarEstado(@PathVariable Long id) {
         service.eliminar(id);
+    }
+    @Operation(summary = "Ver todos los registros")
+    @GetMapping("/todos")
+    public CollectionModel<EntityModel<EstadoAnimo>> obtenerTodos() {
+        List<EstadoAnimo> lista = service.obtenerTodos();
+
+        List<EntityModel<EstadoAnimo>> recursos = lista.stream().map(estado ->
+                EntityModel.of(estado,
+                        WebMvcLinkBuilder.linkTo(
+                                WebMvcLinkBuilder.methodOn(EstadoAnimoController.class).obtenerPorId(estado.getId())
+                        ).withSelfRel(),
+                        WebMvcLinkBuilder.linkTo(
+                                WebMvcLinkBuilder.methodOn(EstadoAnimoController.class).obtenerTodosPorUsuario(estado.getUsuarioId())
+                        ).withRel("historial")
+                )
+        ).toList();
+
+        return CollectionModel.of(recursos,
+                WebMvcLinkBuilder.linkTo(
+                        WebMvcLinkBuilder.methodOn(EstadoAnimoController.class).obtenerTodos()
+                ).withSelfRel()
+        );
     }
 }

@@ -45,4 +45,7 @@ public class EstadoAnimoService {
     public void eliminar(Long id) {
         repository.deleteById(id);
     }
+    public List<EstadoAnimo> obtenerTodos() {
+        return repository.findAll();
+    }
 }
