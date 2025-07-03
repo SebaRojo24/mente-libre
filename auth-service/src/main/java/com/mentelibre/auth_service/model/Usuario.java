@@ -19,13 +19,13 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
     @Email
     @NotBlank
+    @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
     @NotBlank
     @Size(min = 6)
+    @Column(nullable = false)
     private String password;
 }

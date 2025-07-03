@@ -33,6 +33,11 @@ spring:
           uri: lb://report-service
           predicates:
             - Path=/reportes/**
+            -
+        - id: therapy-chatbot-service
+          uri: lb://therapy-chatbot-service
+          predicates:
+            - Path=/chatbot/**
 
 eureka:
   client:
