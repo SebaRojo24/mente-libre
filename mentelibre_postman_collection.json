@@ -1,0 +1,509 @@
+{
+  "info": {
+    "name": "Mentelibre API Gateway",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "mentelibre-collection-20250601023032"
+  },
+  "item": [
+    {
+      "name": "auth-service",
+      "item": [
+        {
+          "name": "Registrar usuario",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/register",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            },
+            "description": "Registrar usuario"
+          }
+        },
+        {
+          "name": "Iniciar sesi\u00f3n",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/login",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            },
+            "description": "Iniciar sesi\u00f3n"
+          }
+        },
+        {
+          "name": "Listar todos los usuarios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/usuarios",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "auth",
+                "usuarios"
+              ]
+            },
+            "description": "Listar todos los usuarios"
+          }
+        },
+        {
+          "name": "Obtener usuario por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/usuarios/:id",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "auth",
+                "usuarios",
+                ":id"
+              ]
+            },
+            "description": "Obtener usuario por ID"
+          }
+        },
+        {
+          "name": "Actualizar usuario",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/usuarios/:id",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "auth",
+                "usuarios",
+                ":id"
+              ]
+            },
+            "description": "Actualizar usuario"
+          }
+        },
+        {
+          "name": "Eliminar usuario",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/usuarios/:id",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "auth",
+                "usuarios",
+                ":id"
+              ]
+            },
+            "description": "Eliminar usuario"
+          }
+        }
+      ]
+    },
+    {
+      "name": "user-profile-service",
+      "item": [
+        {
+          "name": "Crear perfil de usuario",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/profiles",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "profiles"
+              ]
+            },
+            "description": "Crear perfil de usuario"
+          }
+        },
+        {
+          "name": "Obtener todos los perfiles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/profiles",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "profiles"
+              ]
+            },
+            "description": "Obtener todos los perfiles"
+          }
+        },
+        {
+          "name": "Obtener perfil por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/profiles/:id",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "profiles",
+                ":id"
+              ]
+            },
+            "description": "Obtener perfil por ID"
+          }
+        },
+        {
+          "name": "Actualizar perfil",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/profiles/:id",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "profiles",
+                ":id"
+              ]
+            },
+            "description": "Actualizar perfil"
+          }
+        },
+        {
+          "name": "Eliminar perfil",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/profiles/:id",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "profiles",
+                ":id"
+              ]
+            },
+            "description": "Eliminar perfil"
+          }
+        }
+      ]
+    },
+    {
+      "name": "mood-tracker-service",
+      "item": [
+        {
+          "name": "Registrar estado de \u00e1nimo",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/moods/registrar",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "moods",
+                "registrar"
+              ]
+            },
+            "description": "Registrar estado de \u00e1nimo"
+          }
+        },
+        {
+          "name": "Estado de \u00e1nimo de hoy",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/moods/hoy?usuarioId=1",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "moods",
+                "hoy?usuarioId=1"
+              ]
+            },
+            "description": "Estado de \u00e1nimo de hoy"
+          }
+        },
+        {
+          "name": "Estados de \u00e1nimo por usuario",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/moods/usuario/1",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "moods",
+                "usuario",
+                "1"
+              ]
+            },
+            "description": "Estados de \u00e1nimo por usuario"
+          }
+        }
+      ]
+    },
+    {
+      "name": "history-service",
+      "item": [
+        {
+          "name": "Historial de estados",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/historial/moods?usuarioId=1",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "historial",
+                "moods?usuarioId=1"
+              ]
+            },
+            "description": "Historial de estados"
+          }
+        },
+        {
+          "name": "Registrar en historial",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/historial/moods",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "historial",
+                "moods"
+              ]
+            },
+            "description": "Registrar en historial"
+          }
+        }
+      ]
+    },
+    {
+      "name": "notifications-service",
+      "item": [
+        {
+          "name": "Crear notificaci\u00f3n",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/notificaciones/set",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "api",
+                "notificaciones",
+                "set"
+              ]
+            },
+            "description": "Crear notificaci\u00f3n"
+          }
+        },
+        {
+          "name": "Obtener notificaciones por usuario",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/notificaciones/send?usuarioId=1",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "api",
+                "notificaciones",
+                "send?usuarioId=1"
+              ]
+            },
+            "description": "Obtener notificaciones por usuario"
+          }
+        }
+      ]
+    },
+    {
+      "name": "personalization-service",
+      "item": [
+        {
+          "name": "Guardar preferencias",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/preferencias/interface",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "api",
+                "preferencias",
+                "interface"
+              ]
+            },
+            "description": "Guardar preferencias"
+          }
+        },
+        {
+          "name": "Obtener preferencias",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/preferencias/interface?usuarioId=1",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "api",
+                "preferencias",
+                "interface?usuarioId=1"
+              ]
+            },
+            "description": "Obtener preferencias"
+          }
+        }
+      ]
+    },
+    {
+      "name": "report-service",
+      "item": [
+        {
+          "name": "Crear reporte",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/reportes/user/1",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "reportes",
+                "user",
+                "1"
+              ]
+            },
+            "description": "Crear reporte"
+          }
+        },
+        {
+          "name": "Obtener reportes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/reportes/user/1",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "reportes",
+                "user",
+                "1"
+              ]
+            },
+            "description": "Obtener reportes"
+          }
+        },
+        {
+          "name": "Descargar reporte",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/reportes/download",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "reportes",
+                "download"
+              ]
+            },
+            "description": "Descargar reporte"
+          }
+        }
+      ]
+    },
+    {
+      "name": "chatbot-service",
+      "item": [
+        {
+          "name": "Enviar mensaje al chatbot",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/chatbot/mensaje",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "api",
+                "chatbot",
+                "mensaje"
+              ]
+            },
+            "description": "Enviar mensaje al chatbot"
+          }
+        },
+        {
+          "name": "Obtener sugerencias",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/chatbot/sugerencias",
+              "host": [
+                "http://localhost:8080"
+              ],
+              "path": [
+                "api",
+                "chatbot",
+                "sugerencias"
+              ]
+            },
+            "description": "Obtener sugerencias"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -19,9 +19,8 @@ public class UsuarioService {
 
     public Usuario registrarUsuario(Usuario usuario) {
         if (usuarioRepository.existsByEmail(usuario.getEmail())) {
-            throw new RuntimeException("El correo ya está registrado");
+            throw new RuntimeException("Correo ya registrado");
         }
-
         usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
         return usuarioRepository.save(usuario);
     }
@@ -29,11 +28,9 @@ public class UsuarioService {
     public Usuario login(String email, String password) {
         Usuario usuario = usuarioRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
-
         if (!passwordEncoder.matches(password, usuario.getPassword())) {
             throw new RuntimeException("Contraseña incorrecta");
         }
-
         return usuario;
     }
 
@@ -42,8 +39,7 @@ public class UsuarioService {
     }
 
     public Usuario obtenerPorId(Long id) {
-        return usuarioRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        return usuarioRepository.findById(id).orElseThrow(() -> new RuntimeException("No encontrado"));
     }
 
     public Usuario actualizarUsuario(Long id, Usuario datosActualizados) {
@@ -57,10 +53,6 @@ public class UsuarioService {
     }
 
     public void eliminarUsuario(Long id) {
-        if (!usuarioRepository.existsById(id)) {
-            throw new RuntimeException("Usuario no encontrado");
-        }
-
         usuarioRepository.deleteById(id);
     }
 }
