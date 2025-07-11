@@ -1,12 +1,10 @@
 server:
   port: 8080
-
 spring:
   main:
     web-application-type: reactive
   application:
     name: gateway-service
-
   cloud:
     gateway:
       routes:
@@ -18,34 +16,28 @@ spring:
           uri: lb://user-profile-service
           predicates:
             - Path=/profiles/**
-
         - id: mood-tracker-service
           uri: lb://mood-tracker-service
           predicates:
             - Path=/moods/**
-
         - id: history-service
           uri: lb://history-service
           predicates:
             - Path=/historial/**
-
         - id: report-service
           uri: lb://report-service
           predicates:
             - Path=/reportes/**
-            -
         - id: therapy-chatbot-service
           uri: lb://therapy-chatbot-service
           predicates:
             - Path=/chatbot/**
-
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
     register-with-eureka: true
     fetch-registry: true
-
 management:
   endpoints:
     web:
