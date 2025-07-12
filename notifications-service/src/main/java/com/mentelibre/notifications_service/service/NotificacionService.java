@@ -28,4 +28,11 @@ public class NotificacionService {
     public List<Notificacion> obtenerPorUsuario(Long usuarioId) {
         return repository.findByUsuarioId(usuarioId);
     }
+    public List<Notificacion> obtenerTodas() {
+        return repository.findAll();
+    }
+    public Notificacion obtenerPorId(Long id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Notificación no encontrada con ID: " + id));
+    }
 }
