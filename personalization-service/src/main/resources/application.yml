@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/mentelibre_personalization
     username: root
-    password:           # tu clave
+    password: root          # tu clave
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
