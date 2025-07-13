@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 03-07-2025 a las 21:54:31
+-- Tiempo de generación: 13-07-2025 a las 03:27:35
 -- Versión del servidor: 8.0.40
 -- Versión de PHP: 8.3.14
 
@@ -63,7 +63,9 @@ INSERT INTO `estado_animo` (`id`, `estado`, `fecha`, `usuario_id`) VALUES
 (33, 'Cansado', '2025-07-02', 5),
 (34, 'Agradecido', '2025-07-01', 5),
 (35, 'Feliz', '2025-06-30', 5),
-(36, 'Motivado', '2025-06-29', 5);
+(36, 'Motivado', '2025-06-29', 5),
+(38, 'Agradecido', '2025-07-03', 999),
+(39, 'Agradecido', '2025-07-09', 999);
 
 --
 -- Índices para tablas volcadas
@@ -83,7 +85,7 @@ ALTER TABLE `estado_animo`
 -- AUTO_INCREMENT de la tabla `estado_animo`
 --
 ALTER TABLE `estado_animo`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
